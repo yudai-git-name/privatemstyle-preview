@@ -2513,6 +2513,9 @@ body.is-nav-open {
 	gap: var(--space-5);
 	margin: 0 auto;
 	max-width: 540px;
+	width: 100%;
+	overflow: hidden;
+	min-width: 0;
 }
 
 .instagram-embeds .instagram-media {
