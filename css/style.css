@@ -3546,7 +3546,7 @@ body.is-nav-open {
 
 	/* 2026-06-01 角地様FB: PCで他セクションと文字サイズを揃える */
 	.quick-menu__name {
-		font-size: 17px;
+		font-size: 16px;
 	}
 
 	.quick-menu__name small {
