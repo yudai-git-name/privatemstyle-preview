@@ -37,13 +37,21 @@
 	--space-5: 24px;
 	--space-6: 32px;
 	--space-7: 48px;
-	--space-8: 64px;
-	--space-9: 96px;
+	--space-8: 60px;
+	--space-9: 80px;
+	/* 2026-06-01 角地様FB①: 全体の縦余白を詰める（旧 space-8:64px / space-9:96px） */
 
 	/* Layout */
 	--max-w: 1200px;
 	--max-w-narrow: 920px;
 	--header-h: 64px;
+}
+
+/* 2026-06-01 角地様FB: スマホ時はセクション縦余白(--space-9)をさらに狭める（PCは80px→calc92pxのまま維持） */
+@media (max-width: 699px) {
+	:root {
+		--space-9: 56px;
+	}
 }
 
 /* ---------- 2. Reset & base ---------- */
@@ -420,7 +428,7 @@ body.is-nav-open {
 
 .fv__sub {
 	margin: var(--space-5) 0 0;
-	font-size: 20px;
+	font-size: 18px; /* 2026-06-01 角地様FB: スマホ時は18px（PCは900px+で20pxに戻す） */
 	font-weight: 400;
 	color: var(--c-brown-dark);
 	letter-spacing: 0.05em;
@@ -519,6 +527,10 @@ body.is-nav-open {
 		flex-basis: 100%;
 	}
 
+	.fv__sub {
+		font-size: 20px; /* PCはサブコピーを20pxに戻す */
+	}
+
 	.fv__deco {
 		display: block;
 	}
@@ -553,7 +565,7 @@ body.is-nav-open {
 .assurance__intro {
 	margin: 0 0 var(--space-6);
 	text-align: center;
-	font-size: 15px;
+	font-size: 16px; /* 2026-06-01 角地様FB: 他セクションと文字サイズを揃える（旧15px） */
 	line-height: 1.9;
 	letter-spacing: 0.04em;
 	color: var(--c-brown-dark);
@@ -620,6 +632,15 @@ body.is-nav-open {
 		gap: var(--space-3);
 		padding: var(--space-6) var(--space-4);
 	}
+
+	/* 2026-06-01 角地様FB: PCで他セクション本文（16px/lead18px）に揃える */
+	.assurance__intro {
+		font-size: 18px;
+	}
+
+	.assurance__text {
+		font-size: 16px;
+	}
 }
 
 /* ============================================================
@@ -628,7 +649,7 @@ body.is-nav-open {
 .section-head {
 	text-align: center;
 	max-width: 720px;
-	margin: 0 auto var(--space-7);
+	margin: 0 auto var(--space-6); /* 2026-06-01 角地様FB①: 見出し下の余白を詰める（旧 space-7） */
 }
 
 .section-head__label {
@@ -3378,5 +3399,250 @@ body.is-nav-open {
 
 	.final-cta {
 		padding-top: 0;
+	}
+}
+
+/* ============================================================
+   2026-06-01 角地様プレビューFB 反映分
+   #4 人気メニュー（FV直下クイック） / #6 スマホ固定追従LINEバー
+   ============================================================ */
+
+/* ---------- #4 人気メニュー（FV直下） ---------- */
+.quick-menu {
+	background: var(--c-base-light);
+	border-block: 1px solid var(--c-secondary);
+}
+
+.quick-menu__inner {
+	max-width: var(--max-w-narrow);
+	margin: 0 auto;
+	padding: var(--space-7) var(--space-4) var(--space-6);
+	text-align: center;
+}
+
+.quick-menu__label {
+	margin: 0;
+	font-family: var(--ff-sans);
+	font-size: 14px;
+	letter-spacing: 0.28em;
+	color: var(--c-gold);
+	text-transform: uppercase;
+}
+
+.quick-menu__title {
+	margin: var(--space-2) 0 var(--space-5);
+	font-family: var(--ff-serif);
+	font-weight: 300;
+	font-size: clamp(20px, 3.4vw, 26px);
+	letter-spacing: 0.06em;
+	color: var(--c-brown-dark);
+}
+
+.quick-menu__list {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: grid;
+	gap: var(--space-3);
+}
+
+.quick-menu__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-4);
+	background: var(--c-white);
+	border: 1px solid var(--c-secondary);
+	border-radius: 12px;
+	text-align: left;
+}
+
+.quick-menu__num {
+	flex: 0 0 auto;
+	font-family: var(--ff-serif);
+	font-size: 15px;
+	color: var(--c-gold);
+	letter-spacing: 0.08em;
+}
+
+.quick-menu__name {
+	flex: 1 1 auto;
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--c-brown-dark);
+	letter-spacing: 0.02em;
+}
+
+.quick-menu__name small {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--c-brown-mid);
+}
+
+.quick-menu__meta {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: baseline;
+	gap: var(--space-3);
+}
+
+.quick-menu__time {
+	font-size: 14px;
+	color: var(--c-brown-mid);
+}
+
+.quick-menu__price {
+	font-family: var(--ff-serif);
+	font-size: 18px;
+	color: var(--c-brown-dark);
+	white-space: nowrap;
+}
+
+.quick-menu__price em {
+	font-style: normal;
+	font-size: 10px;
+	letter-spacing: 0.1em;
+	color: var(--c-gold);
+	margin-right: 4px;
+	vertical-align: 1px;
+}
+
+.quick-menu__more {
+	display: inline-block;
+	margin-top: var(--space-5);
+	font-size: 14px;
+	color: var(--c-brown-mid);
+	border-bottom: 1px solid var(--c-gold);
+	padding-bottom: 2px;
+	letter-spacing: 0.04em;
+	transition: color 0.2s ease;
+}
+
+.quick-menu__more:hover {
+	color: var(--c-brown-dark);
+}
+
+@media (min-width: 700px) {
+	.quick-menu__inner {
+		padding: var(--space-8) var(--space-6) var(--space-7);
+	}
+
+	.quick-menu__list {
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-4);
+	}
+
+	.quick-menu__item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-2);
+		padding: var(--space-5);
+	}
+
+	.quick-menu__meta {
+		margin-top: var(--space-1);
+	}
+
+	/* 2026-06-01 角地様FB: PCで他セクションと文字サイズを揃える */
+	.quick-menu__name {
+		font-size: 17px;
+	}
+
+	.quick-menu__name small {
+		font-size: 14px;
+	}
+
+	.quick-menu__time {
+		font-size: 15px;
+	}
+
+	.quick-menu__price {
+		font-size: 20px;
+	}
+
+	.quick-menu__more {
+		font-size: 15px;
+	}
+}
+
+/* ---------- #6 スマホ固定追従 LINE予約バー ---------- */
+.sticky-cta {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 80;
+	display: flex;
+	padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+	background: rgba(252, 250, 245, 0.94);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	box-shadow: 0 -3px 18px rgba(74, 58, 53, 0.14);
+	/* 2026-06-01 角地様FB: 初期は隠し、quick-menu到達でスライドイン表示 */
+	transform: translateY(125%);
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: transform 0.4s cubic-bezier(0.16, 0.84, 0.44, 1), opacity 0.4s ease, visibility 0.4s;
+}
+
+.sticky-cta.is-visible {
+	transform: translateY(0);
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sticky-cta {
+		transform: none;
+		transition: opacity 0.25s ease, visibility 0.25s;
+	}
+}
+
+.sticky-cta__btn {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	min-height: 52px;
+	padding: 0 var(--space-4);
+	background: var(--c-line-cta);
+	color: var(--c-white);
+	font-family: var(--ff-sans);
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	border-radius: 999px;
+	text-decoration: none;
+	box-shadow: 0 4px 12px rgba(6, 199, 85, 0.32);
+	transition: background 0.2s ease;
+}
+
+.sticky-cta__btn:hover {
+	background: var(--c-line-cta-h);
+}
+
+.sticky-cta__icon {
+	width: 24px;
+	height: 24px;
+	flex: 0 0 auto;
+}
+
+/* スマホ限定表示：固定バーぶんの余白を確保 */
+body {
+	padding-bottom: calc(64px + env(safe-area-inset-bottom));
+}
+
+/* PCでは非表示・余白も解除 */
+@media (min-width: 700px) {
+	.sticky-cta {
+		display: none;
+	}
+
+	body {
+		padding-bottom: 0;
 	}
 }
