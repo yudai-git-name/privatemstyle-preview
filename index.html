@@ -162,6 +162,15 @@
           </span>
           <p class="assurance__text"><strong>ご家族・ご友人の同席</strong>を歓迎しています</p>
         </li>
+        <li class="assurance__item">
+          <span class="assurance__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 6h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H13l-6 5v-5H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
+              <path d="M11 13h10M11 17h6"/>
+            </svg>
+          </span>
+          <p class="assurance__text">ご予約前の<strong>LINEでのご相談・ご質問</strong>もお気軽にどうぞ</p>
+        </li>
       </ul>
     </div>
   </aside>
@@ -484,24 +493,55 @@
             <span class="profile__name-en">Hiroo Kakuchi</span>
           </h3>
 
+          <ul class="profile__badges" aria-label="主な資格・経歴">
+            <li class="profile__badge profile__badge--main">柔道整復師<span class="profile__badge-note">国家資格</span></li>
+            <li class="profile__badge">カイロプラクター</li>
+            <li class="profile__badge">スポーツトレーナー</li>
+            <li class="profile__badge">元・整骨院 院長</li>
+          </ul>
+
           <dl class="profile__facts">
             <div class="profile__fact">
-              <dt>生年</dt>
-              <dd>1970年生まれ（55歳）</dd>
-            </div>
-            <div class="profile__fact">
-              <dt>資格</dt>
-              <dd class="profile__fact-dd--oneline">柔道整復師（国家資格）／カイロプラクティック技術 等</dd>
-            </div>
-            <div class="profile__fact">
               <dt>経歴</dt>
-              <dd>2011〜2023年 武蔵境整骨院 院長運営<br>医療・整体・ボディケアの経験</dd>
+              <dd>
+                東京柔道整復専門学校 卒業<br>
+                日本カイロプラクティックドクター学院 卒業<br>
+                武蔵境整骨院 院長（2011〜2023年・個人運営）<br>
+                現在は接骨院に勤務
+              </dd>
             </div>
             <div class="profile__fact">
-              <dt>現職</dt>
-              <dd>接骨院に勤務</dd>
+              <dt>施術歴</dt>
+              <dd>整骨院の運営と接骨院での施術を通じて、女性のお身体のケアに長く携わってきました。</dd>
             </div>
           </dl>
+
+          <details class="profile__quals">
+            <summary class="profile__quals-summary">
+              <span>保有資格一覧をすべて見る（全11種）</span>
+              <span class="profile__quals-chevron" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="3" y1="8" x2="13" y2="8"/>
+                  <line x1="8" y1="3" x2="8" y2="13" class="profile__quals-chevron-v"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="profile__quals-body">
+            <ul class="profile__quals-list">
+              <li>柔道整復師（国家資格）</li>
+              <li>カイロプラクター</li>
+              <li>スポーツトレーナー</li>
+              <li>JCCAインストラクター</li>
+              <li>ダイエットインストラクター</li>
+              <li>スポーツリーダー</li>
+              <li>アロマオイルマッサージ</li>
+              <li>タイ古式ボディケア</li>
+              <li>ルーシーダットン</li>
+              <li>ヨガインストラクター</li>
+              <li>野菜スペシャリスト</li>
+            </ul>
+            </div>
+          </details>
 
           <blockquote class="profile__message">
             <p>
@@ -944,28 +984,46 @@
         </p>
       </header>
 
-      <ul class="area-grid">
-        <li class="area-card">
-          <p class="area-card__label">TOKYO</p>
-          <h3 class="area-card__name">練馬区</h3>
-          <p class="area-card__stations">練馬／大泉学園／石神井公園／光が丘 ほか</p>
-        </li>
-        <li class="area-card">
-          <p class="area-card__label">TOKYO</p>
-          <h3 class="area-card__name">杉並区</h3>
-          <p class="area-card__stations">阿佐ヶ谷／荻窪／高円寺／西荻窪 ほか</p>
-        </li>
-        <li class="area-card">
-          <p class="area-card__label">TOKYO</p>
-          <h3 class="area-card__name">武蔵野市</h3>
-          <p class="area-card__stations">吉祥寺／三鷹／武蔵境 ほか</p>
-        </li>
-        <li class="area-card">
-          <p class="area-card__label">TOKYO</p>
-          <h3 class="area-card__name">西東京市</h3>
-          <p class="area-card__stations">田無／ひばりヶ丘／保谷 ほか</p>
-        </li>
-      </ul>
+      <figure class="area-map" aria-label="対応エリアのイメージ図（練馬区・西東京市・武蔵野市・杉並区）">
+        <svg class="area-map__svg" viewBox="0 0 400 312" role="img" xmlns="http://www.w3.org/2000/svg">
+          <title>対応エリア：練馬区・西東京市・武蔵野市・杉並区</title>
+          <rect x="6" y="6" width="388" height="300" rx="18" class="area-map__frame"/>
+          <text x="24" y="34" class="area-map__caption">TOKYO ／ 東京都西部</text>
+
+          <g class="area-map__zone">
+            <rect x="30" y="52" width="160" height="112" rx="14"/>
+            <text x="110" y="100" class="area-map__name">西東京市</text>
+            <text x="110" y="124" class="area-map__sta">田無・ひばりヶ丘・保谷</text>
+          </g>
+          <g class="area-map__zone">
+            <rect x="210" y="52" width="160" height="112" rx="14"/>
+            <text x="290" y="100" class="area-map__name">練馬区</text>
+            <text x="290" y="124" class="area-map__sta">練馬・大泉学園・光が丘</text>
+          </g>
+          <g class="area-map__zone">
+            <rect x="30" y="184" width="160" height="112" rx="14"/>
+            <text x="110" y="232" class="area-map__name">武蔵野市</text>
+            <text x="110" y="256" class="area-map__sta">吉祥寺・三鷹・武蔵境</text>
+          </g>
+          <g class="area-map__zone">
+            <rect x="210" y="184" width="160" height="112" rx="14"/>
+            <text x="290" y="232" class="area-map__name">杉並区</text>
+            <text x="290" y="256" class="area-map__sta">阿佐ヶ谷・荻窪・高円寺</text>
+          </g>
+
+          <g class="area-map__pin" transform="translate(200,174)">
+            <circle r="24" class="area-map__pin-bg"/>
+            <g transform="translate(-11,-10)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="area-map__pin-mark">
+              <path d="M3 9l8-7 8 7"/>
+              <path d="M5 8v9h12V8"/>
+              <path d="M9 17v-4h4v4"/>
+            </g>
+          </g>
+        </svg>
+        <figcaption class="area-map__note">
+          ※ 対応エリアのイメージ図です。ご自宅の正確な位置は、ご予約確定後にLINEでお伺いします。
+        </figcaption>
+      </figure>
 
       <div class="area__badges" aria-label="サービスの特徴">
         <span class="area__badge">出張型</span>
@@ -1129,6 +1187,27 @@
         </li>
 
         <li>
+          <details class="faq-item" open>
+            <summary class="faq-item__q">
+              <span class="faq-item__mark" aria-hidden="true">Q</span>
+              <span class="faq-item__q-text">本当に女性専用ですか？</span>
+              <span class="faq-item__chevron" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="3" y1="8" x2="13" y2="8"/>
+                  <line x1="8" y1="3" x2="8" y2="13" class="faq-item__chevron-v"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-item__a"><div class="faq-item__a-inner">
+              <span class="faq-item__mark faq-item__mark--a" aria-hidden="true">A</span>
+              <p class="faq-item__a-text">
+                はい、女性のお客様専用のサービスです。男性のお客様のご予約は一切お受けしておりません。施術内容・対応ルール・ご予約の運用まで、すべて女性のお客様に安心してお過ごしいただくことを前提に整えています。
+              </p>
+            </div></div>
+          </details>
+        </li>
+
+        <li>
           <details class="faq-item">
             <summary class="faq-item__q">
               <span class="faq-item__mark" aria-hidden="true">Q</span>
@@ -1195,6 +1274,27 @@
           <details class="faq-item">
             <summary class="faq-item__q">
               <span class="faq-item__mark" aria-hidden="true">Q</span>
+              <span class="faq-item__q-text">初めてですが、準備するものはありますか？</span>
+              <span class="faq-item__chevron" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="3" y1="8" x2="13" y2="8"/>
+                  <line x1="8" y1="3" x2="8" y2="13" class="faq-item__chevron-v"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-item__a"><div class="faq-item__a-inner">
+              <span class="faq-item__mark faq-item__mark--a" aria-hidden="true">A</span>
+              <p class="faq-item__a-text">
+                特別なご準備は必要ありません。施術に必要なタオル・オイル・備品はすべて施術者がお持ちします。横になれるスペース（布団1枚分程度）をご用意いただければ大丈夫です。お部屋の片付けなどもお気遣いなくお過ごしください。
+              </p>
+            </div></div>
+          </details>
+        </li>
+
+        <li>
+          <details class="faq-item">
+            <summary class="faq-item__q">
+              <span class="faq-item__mark" aria-hidden="true">Q</span>
               <span class="faq-item__q-text">家族や同居人がいても大丈夫ですか？</span>
               <span class="faq-item__chevron" aria-hidden="true">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
@@ -1249,6 +1349,48 @@
               <span class="faq-item__mark faq-item__mark--a" aria-hidden="true">A</span>
               <p class="faq-item__a-text">
                 ボディケア・カイロ・アロマの場合は布団1枚分（約180×100cm）のスペースがあれば施術可能です。初心者ヨガの場合はヨガマット1枚分程度のスペースをご用意ください。
+              </p>
+            </div></div>
+          </details>
+        </li>
+
+        <li>
+          <details class="faq-item">
+            <summary class="faq-item__q">
+              <span class="faq-item__mark" aria-hidden="true">Q</span>
+              <span class="faq-item__q-text">自宅以外でも施術してもらえますか？</span>
+              <span class="faq-item__chevron" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="3" y1="8" x2="13" y2="8"/>
+                  <line x1="8" y1="3" x2="8" y2="13" class="faq-item__chevron-v"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-item__a"><div class="faq-item__a-inner">
+              <span class="faq-item__mark faq-item__mark--a" aria-hidden="true">A</span>
+              <p class="faq-item__a-text">
+                はい、可能です。基本はお客様のご自宅へお伺いしますが、ご希望に応じてホテルやレンタルサロン等への出張も承っております。「自宅は気が引ける」という方もご安心ください。ご希望の場所をLINEでご相談いただければ、対応可否をご案内いたします。
+              </p>
+            </div></div>
+          </details>
+        </li>
+
+        <li>
+          <details class="faq-item">
+            <summary class="faq-item__q">
+              <span class="faq-item__mark" aria-hidden="true">Q</span>
+              <span class="faq-item__q-text">当日の予約はできますか？</span>
+              <span class="faq-item__chevron" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="3" y1="8" x2="13" y2="8"/>
+                  <line x1="8" y1="3" x2="8" y2="13" class="faq-item__chevron-v"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-item__a"><div class="faq-item__a-inner">
+              <span class="faq-item__mark faq-item__mark--a" aria-hidden="true">A</span>
+              <p class="faq-item__a-text">
+                空き状況によっては当日のご予約も承っております。完全予約制・1日数件のみの限定対応のため、ご希望の日時に沿いやすいよう、できるだけお早めにLINEからお問い合わせいただけますと幸いです。
               </p>
             </div></div>
           </details>
@@ -1461,8 +1603,8 @@
   <script async src="https://www.instagram.com/embed.js"></script>
 
   <script>
-    // FAQ: <details> の closed → block:none を上書きせず、グリッド行で擬似アニメ
-    document.querySelectorAll('.faq-item').forEach(item => {
+    // FAQ・保有資格一覧: <details> の closed → block:none を上書きせず、グリッド行で擬似アニメ
+    document.querySelectorAll('.faq-item, .profile__quals').forEach(item => {
       const summary = item.querySelector('summary');
       if (!summary) return;
       summary.addEventListener('click', (e) => {
