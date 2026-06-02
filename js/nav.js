@@ -28,7 +28,7 @@ export function initMobileNav() {
   });
 
   // デスクトップ幅に戻ったら状態をリセット
-  const mq = window.matchMedia("(min-width: 900px)");
+  const mq = window.matchMedia("(min-width: 961px)");
   mq.addEventListener("change", (e) => {
     if (e.matches) setOpen(false);
   });

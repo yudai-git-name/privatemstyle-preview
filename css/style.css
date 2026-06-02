@@ -304,7 +304,7 @@ body.is-nav-open {
 	transform: translateY(-6.5px) rotate(-45deg);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 961px) {
 	.site-header__inner {
 		padding: 0 var(--space-6);
 	}
