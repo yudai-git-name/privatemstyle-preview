@@ -31,7 +31,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <!-- フォントは非ブロッキング読込（display=swap で先にフォールバック表示→差し替え） -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap"></noscript>
 
   <!-- LCP改善: FVメインビジュアルを先読み -->
   <link rel="preload" as="image" href="assets/fv/fv-hero.webp" fetchpriority="high">
@@ -142,7 +145,7 @@
       </div>
 
       <div class="fv__visual">
-        <img src="assets/fv/fv-hero.webp" width="1086" height="1448" alt="" class="fv__hero-img">
+        <img src="assets/fv/fv-hero.webp" width="1000" height="1333" alt="" class="fv__hero-img">
       </div>
     </div>
   </section>
@@ -238,7 +241,7 @@
       </header>
 
       <figure class="home-care__photo">
-        <img src="assets/photos/home-care-hero.webp" width="1672" height="941" alt="ご自宅でリラックスして施術を受ける様子（イメージ）" loading="lazy">
+        <img src="assets/photos/home-care-hero.webp" width="1000" height="563" alt="ご自宅でリラックスして施術を受ける様子（イメージ）" loading="lazy">
       </figure>
 
       <ul class="benefit-cards">
@@ -533,7 +536,7 @@
 
       <div class="profile__main">
         <figure class="profile__photo">
-          <img src="assets/photos/profile.webp" width="1122" height="1402" alt="施術者：角地 宏夫" loading="lazy">
+          <img src="assets/photos/profile.webp" width="1000" height="1250" alt="施術者：角地 宏夫" loading="lazy">
         </figure>
 
         <div class="profile__body">
@@ -656,7 +659,7 @@
 
         <article class="menu-item" id="menu-massage">
           <figure class="menu-item__photo">
-            <img src="assets/photos/menu-1-massage.webp" width="1122" height="1402" alt="ボディケア施術イメージ" loading="lazy">
+            <img src="assets/photos/menu-1-massage.webp" width="1000" height="1250" alt="ボディケア施術イメージ" loading="lazy">
             <span class="menu-item__num" aria-hidden="true">01</span>
           </figure>
           <div class="menu-item__body">
@@ -700,7 +703,7 @@
 
         <article class="menu-item" id="menu-chiropractic">
           <figure class="menu-item__photo">
-            <img src="assets/photos/menu-2-chiropractic.webp" width="1122" height="1402" alt="カイロプラクティック施術イメージ" loading="lazy">
+            <img src="assets/photos/menu-2-chiropractic.webp" width="1000" height="1250" alt="カイロプラクティック施術イメージ" loading="lazy">
             <span class="menu-item__num" aria-hidden="true">02</span>
           </figure>
           <div class="menu-item__body">
@@ -744,7 +747,7 @@
 
         <article class="menu-item" id="menu-aroma">
           <figure class="menu-item__photo">
-            <img src="assets/photos/menu-3-aroma.webp" width="1122" height="1402" alt="アロマオイルトリートメント施術イメージ" loading="lazy">
+            <img src="assets/photos/menu-3-aroma.webp" width="1000" height="1250" alt="アロマオイルトリートメント施術イメージ" loading="lazy">
             <span class="menu-item__num" aria-hidden="true">03</span>
           </figure>
           <div class="menu-item__body">
@@ -788,7 +791,7 @@
 
         <article class="menu-item" id="menu-powder">
           <figure class="menu-item__photo">
-            <img src="assets/photos/menu-4-powder.webp" width="1122" height="1402" alt="ベビーパウダーソフトケア施術イメージ" loading="lazy">
+            <img src="assets/photos/menu-4-powder.webp" width="1000" height="1250" alt="ベビーパウダーソフトケア施術イメージ" loading="lazy">
             <span class="menu-item__num" aria-hidden="true">04</span>
           </figure>
           <div class="menu-item__body">
@@ -832,7 +835,7 @@
 
         <article class="menu-item" id="menu-yoga">
           <figure class="menu-item__photo">
-            <img src="assets/photos/menu-5-yoga.webp" width="1122" height="1402" alt="初心者ヨガ施術イメージ" loading="lazy">
+            <img src="assets/photos/menu-5-yoga.webp" width="1000" height="1250" alt="初心者ヨガ施術イメージ" loading="lazy">
             <span class="menu-item__num" aria-hidden="true">05</span>
           </figure>
           <div class="menu-item__body">
@@ -896,7 +899,7 @@
 
       <div class="flow__main">
         <figure class="flow__photo">
-          <img src="assets/photos/flow-side.webp" width="1086" height="1448" alt="" loading="lazy">
+          <img src="assets/photos/flow-side.webp" width="1000" height="1333" alt="" loading="lazy">
         </figure>
 
       <ol class="flow-steps">
