@@ -3878,3 +3878,24 @@ body {
 		padding-bottom: 0;
 	}
 }
+/* ============================================================
+   QA: アクセシビリティ補強（2026-06-08 公開前対応）
+   ============================================================ */
+/* キーボード操作時のフォーカス可視化（focus-visible のみ＝マウス時は非表示） */
+:focus-visible {
+	outline: 2px solid var(--c-gold, #C9A87C);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* モーション軽減設定の尊重（サイト全体） */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
